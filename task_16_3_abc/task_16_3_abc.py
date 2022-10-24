@@ -1,4 +1,4 @@
-import math
+from math import ceil, log
 
 import numpy as np
 
@@ -17,7 +17,7 @@ def solve(c: np.array, d: np.array, alpha: float, eps: float, x: np.array):
     x1 = np.matmul(c, x0) + d  # следующее за начальным приближение x1 = C * x0 + d
     # Априорная оценка числа итераций N_apr = log_а[э*(1-а)/р(x0,x1)]
     # (здесь э -- эпсилон, а -- альфа, р -- Евклидова метрика)
-    n_apr = int(math.ceil(math.log(
+    n_apr = int(ceil(log(
         (eps * (1.0 - alpha)) / np.linalg.norm(x0 - x1),  # считаем логарифм этого числа
         alpha  # основание логарифма
     )))

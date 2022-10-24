@@ -1,0 +1,4 @@
+### Библиотеки
+
+* numpy
+* matplotlib
